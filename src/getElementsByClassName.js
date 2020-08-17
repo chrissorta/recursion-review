@@ -4,7 +4,30 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className
+var getElementsByClassName = function (className
 ) {
-  // your code here
+  let outputArr = [];
+
+  //find child nodes
+  //iterated through _.each
+  //_.contains className, push to outputArr
+  //ifchildren
+  //run inner function recursively
+  var childNodes = function (node) {
+    var nodes = node.childNodes;
+
+    nodes.forEach(function (currentNode) {
+      if (_.contains(currentNode.classList, className)) {
+        outputArr.push(currentNode);
+      }
+
+      if (currentNode.hasChildNodes()) {
+        return childNodes(currentNode);
+      }
+    });
+  };
+
+  childNodes(document);
+
+  return outputArr;
 };
