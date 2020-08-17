@@ -16,7 +16,7 @@ var stringifyJSON = function (obj) {
 
   //array
   if (Array.isArray(obj)) {
-    var string = obj.map(element => stringifyJSON(element));
+    let string = obj.map(element => stringifyJSON(element));
     return '[' + string.join(',') + ']';
   }
 

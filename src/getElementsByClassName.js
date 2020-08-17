@@ -14,7 +14,7 @@ var getElementsByClassName = function (className
   //ifchildren
   //run inner function recursively
   var childNodes = function (node) {
-    var nodes = node.childNodes;
+    let nodes = node.childNodes;
 
     nodes.forEach(function (currentNode) {
       if (_.contains(currentNode.classList, className)) {
